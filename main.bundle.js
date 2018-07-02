@@ -81,6 +81,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__component_nebpay_component__ = __webpack_require__("./src/app/component/nebpay.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_smart_page__ = __webpack_require__("./src/app/pages/smart.page.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_welcome_page__ = __webpack_require__("./src/app/pages/welcome.page.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -101,11 +102,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
+    { path: 'welcome', component: __WEBPACK_IMPORTED_MODULE_14__pages_welcome_page__["a" /* WelcomePage */] },
     { path: 'batch', component: __WEBPACK_IMPORTED_MODULE_9__pages_batch_page__["a" /* BatchPage */] },
     { path: 'smart', component: __WEBPACK_IMPORTED_MODULE_12__pages_smart_page__["a" /* SmartPage */] },
     { path: '',
-        redirectTo: '/batch',
+        redirectTo: '/welcome',
         pathMatch: 'full'
     },
 ];
@@ -121,6 +124,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__component_review_component__["a" /* ReviewComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_batch_page__["a" /* BatchPage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_smart_page__["a" /* SmartPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_welcome_page__["a" /* WelcomePage */],
                 __WEBPACK_IMPORTED_MODULE_11__component_nebpay_component__["a" /* NebpayComponent */]
             ],
             imports: [
@@ -484,7 +488,7 @@ var AppDashboard = /** @class */ (function () {
     AppDashboard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-dashboard',
-            template: "\n    <nz-layout>\n      <nz-sider nzCollapsible [(nzCollapsed)]=\"isCollapsed\" [nzCollapsedWidth]=\"0\" [nzBreakpoint]=\"'lg'\">\n        <div class=\"logo\">\n        </div>\n        <ul nz-menu [nzTheme]=\"'dark'\" [nzMode]=\"isCollapsed?'vertical':'inline'\">\n          <li nz-menu-item routerLink=\"/batch\" routerLinkActive=\"active\"><span><i class=\"anticon anticon-user\"></i><span class=\"nav-text\" routerLink=\"/batch\" routerLinkActive=\"active\">NAS Batch distribute</span></span>\n          </li>\n          <li nz-menu-item routerLink=\"/smart\" routerLinkActive=\"active\"><span><i class=\"anticon anticon-video-camera\"></i><span class=\"nav-text\" routerLink=\"/smart\" routerLinkActive=\"active\">NAS Smart distribute</span></span>\n          </li>\n          <li nz-menu-item><span><i class=\"anticon anticon-upload\"></i><span\n            class=\"nav-text\">Nebulas Smart Wallet</span></span></li>\n          <!--<li nz-menu-item><span><i class=\"anticon anticon-user\"></i><span class=\"nav-text\">nav 4</span></span></li>-->\n        </ul>\n      </nz-sider>\n      <nz-layout>\n        <nz-header style=\"background: #fff; padding:0;\">\n          <p style=\"margin-left: 20px;font-size: xx-large\">NAS Toolbox</p>\n        </nz-header>\n        <nz-content style=\"margin:24px 16px 0;\">\n          <div style=\"padding:24px; background: #fff; min-height: 720px;\">\n            <router-outlet></router-outlet>\n          </div>\n        </nz-content>\n        <nz-footer style=\"text-align: center;\">Nebulas Toolbox by Ljm625</nz-footer>\n      </nz-layout>\n    </nz-layout>\n  ",
+            template: "\n    <nz-layout>\n      <nz-sider nzCollapsible [(nzCollapsed)]=\"isCollapsed\" [nzCollapsedWidth]=\"0\" [nzBreakpoint]=\"'lg'\">\n        <div class=\"logo\">\n        </div>\n        <ul nz-menu [nzTheme]=\"'dark'\" [nzMode]=\"isCollapsed?'vertical':'inline'\">\n          <li nz-menu-item routerLink=\"/batch\" routerLinkActive=\"active\"><span><i class=\"anticon anticon-user\"></i><span class=\"nav-text\" routerLink=\"/batch\" routerLinkActive=\"active\">NAS Batch distribute</span></span>\n          </li>\n          <li nz-menu-item routerLink=\"/smart\" routerLinkActive=\"active\"><span><i class=\"anticon anticon-video-camera\"></i><span class=\"nav-text\" routerLink=\"/smart\" routerLinkActive=\"active\">NAS Smart distribute</span></span>\n          </li>\n          <li nz-menu-item><span><i class=\"anticon anticon-upload\"></i><span\n            class=\"nav-text\">Nebulas Smart Wallet</span></span></li>\n          <li nz-menu-item routerLink=\"/welcome\" routerLinkActive=\"active\"><span><i class=\"anticon anticon-user\"></i><span class=\"nav-text\" routerLink=\"/welcome\" routerLinkActive=\"active\">Help</span></span></li>\n        </ul>\n      </nz-sider>\n      <nz-layout>\n        <nz-header style=\"background: #fff; padding:0;\">\n          <p style=\"margin-left: 20px;font-size: xx-large\">NAS Toolbox</p>\n        </nz-header>\n        <nz-content style=\"margin:24px 16px 0;\">\n          <div style=\"padding:24px; background: #fff; min-height: 720px;\">\n            <router-outlet></router-outlet>\n          </div>\n        </nz-content>\n        <nz-footer style=\"text-align: center;\">Nebulas Toolbox by Ljm625</nz-footer>\n      </nz-layout>\n    </nz-layout>\n  ",
             styles: [
                 "\n      :host ::ng-deep .logo {\n        height: 32px;\n        background: rgba(255, 255, 255, .2);\n        margin: 16px;\n      }\n    "
             ]
@@ -621,6 +625,45 @@ var SmartPage = /** @class */ (function () {
         })
     ], SmartPage);
     return SmartPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/welcome.page.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h1 id=\"nebulastoolboxuserguide\">Nebulas Toolbox UserGuide</h1>\n\n<p>The Nebulas Toolbox is a tool for you to easily distibute NAS to multiple account (for example Airdrop) and much more.</p>\n\n<p>Currently it supports </p>\n\n<ul>\n  <li>NAS equally distribute (Distribute NAS to multiple address equally)</li>\n\n  <li>NAS custom batch distribute (Distribute NAS to multiple address with custom amount per address)</li>\n\n  <li>Smart NAS wallet (the wallet auto checks if there's a tx from owner for given time. If time limit exceeded, the amount can be withdraw to the secondary wallet to avoid wallet loss) (Frontend still developing)</li>\n</ul>\n\n<h3 id=\"nasequaldistribute\">NAS Equal Distribute</h3>\n\n<p>For Simple batch distribute, choose \"NAS batch distribute\" on the left. Click add and enter the name and address. Do it multiple times for all recipients. Enter total NAS amount on the lower right. Then go to next page by clicking forward. Check if the summary is correct. If it's correct, go to the last page and click the button. the NebPay will popup and click send to send the contribution.</p>\n\n<h3 id=\"nascustomdistribute\">NAS Custom Distribute</h3>\n\n<p>For Custom batch distribute, choose \"NAS Smart distribute\" on the left. Click add and enter the name, address and amount. Do it multiple times for all recipients. Go to next page by clicking forward. Check if the summary is correct. If it's correct, go to the last page and click the button. the NebPay will popup and click send to send the contribution.</p>\n\n<h5 id=\"forhelpandadvicespleasesendtoljmwowcom\">For Help and advices, please send to ljm#wow.com</h5>\n"
+
+/***/ }),
+
+/***/ "./src/app/pages/welcome.page.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var WelcomePage = /** @class */ (function () {
+    function WelcomePage() {
+    }
+    WelcomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-page-welcome',
+            template: __webpack_require__("./src/app/pages/welcome.page.html"),
+            styles: [
+                "\n      :host ::ng-deep .logo {\n        height: 32px;\n        background: rgba(255, 255, 255, .2);\n        margin: 16px;\n      }\n    "
+            ]
+        })
+    ], WelcomePage);
+    return WelcomePage;
 }());
 
 
